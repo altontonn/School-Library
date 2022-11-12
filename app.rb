@@ -7,7 +7,7 @@ require './teacher'
 
 class App
   def initialize
-    @book = []
+    @books = []
     @rentals = []
     @persons = []
     @classroom = []
@@ -65,5 +65,16 @@ class App
     student = Student.new(name, age, parent_permission, classroom)
     @persons << student
     puts 'student added successfully'
+  end
+
+  def create_book
+    puts 'Create new book'
+    print 'Enter book title: '
+    title = gets.chomp
+    print 'Enter book author: '
+    author = gets.chomp
+    book = Book.new(title, author)
+    @books << book
+    puts 'Book added succesfully'
   end
 end
