@@ -87,4 +87,10 @@ class App
       end
     end
   end
+
+  def list_all_person
+    @persons.each_with_index do |person, index|
+      puts "#{index}) #[{person.role}] Name: #{person.name}, Id: #{person.id}, Age: #{person.age}"
+    end
+  end
 end
