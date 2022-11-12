@@ -77,4 +77,14 @@ class App
     @books << book
     puts 'Book added succesfully'
   end
+
+  def list_all_books
+    if @books.length.zero?
+      puts 'No book found'
+    else
+      @books.each_with_index do |book, index|
+        puts "#{index}) Title: #{book.title} Author: #{book.author}"
+      end
+    end
+  end
 end
