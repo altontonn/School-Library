@@ -46,7 +46,7 @@ class App
     age = gets.chomp
     puts 'Enter teacher specialization'
     specialization = gets.chomp
-    teacher = Teacher.new(specialization, age, name)
+    teacher = Teacher.new(specialization, name, age)
     @persons << teacher
     puts 'teacher added successfully'
   end
@@ -90,7 +90,23 @@ class App
 
   def list_all_person
     @persons.each_with_index do |person, index|
-      puts "#{index}) #[{person.role}] Name: #{person.name}, Id: #{person.id}, Age: #{person.age}"
+      puts "#{index}) [#{person.role}] Name: #{person.name}, Id: #{person.id}, Age: #{person.age}"
     end
+  end
+
+  def create_rentals
+    puts 'Select a book from the following list by number'
+    list_all_books
+    book_chosen = gets.chomp.to_i
+    book = @books[book_chosen]
+    puts 'Select a book from the following list by number not (id)'
+    list_all_person
+    person_chosen = gets.chomp.to_i
+    person = @persons[person_chosen]
+    puts 'Enter Date: '
+    date = gets.chomp
+    rental = Rental.new(date, book, person)
+    @rentals << rental
+    puts 'Rental added successfully'
   end
 end

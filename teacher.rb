@@ -1,7 +1,7 @@
 require './person'
 class Teacher < Person
-  def initialize(specialization, name, age)
-    super(name, age)
+  def initialize(specialization, name, age, role = 'Teacher')
+    super(name, age, role)
     @specialization = specialization
   end
 
