@@ -21,7 +21,7 @@ class App
         puts 'Thank you for using school library'
         break
       end
-      options input
+      option input
     end
   end
 
@@ -62,7 +62,7 @@ class App
     parent_permission = parent_permission == 'y'
     print 'Enter classroom: '
     classroom = gets.chomp
-    student = Student.new(name, age, parent_permission, classroom)
+    student = Student.new(name, age, parent_permission)
     @persons << student
     puts 'student added successfully'
   end
